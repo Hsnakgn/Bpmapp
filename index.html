@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BPMApp</title>
+</head>
+
+<body style="text-align:center; font-family:Arial; margin-top:100px;">
+
+<h1>BPMApp</h1>
+<p id="text">Yükleniyor...</p>
+
+<div id="buttons" style="display:none;">
+  <a href="https://apps.apple.com/tr/app/bpmapp/id6757220647?l=tr">App Store</a><br><br>
+  <a href="https://play.google.com/store/apps/details?id=com.birikimpiieri.bpmapp.bpmapp">Play Store</a>
+</div>
+
+<script>
+const ua = navigator.userAgent.toLowerCase();
+
+if (ua.includes("iphone") || ua.includes("ipad")) {
+  document.getElementById("text").innerText = "App Store açılıyor...";
+  window.location.href = "https://apps.apple.com/tr/app/bpmapp/id6757220647?l=tr";
+
+} else if (ua.includes("android")) {
+  document.getElementById("text").innerText = "Play Store açılıyor...";
+  window.location.href = "https://play.google.com/store/apps/details?id=com.birikimpiieri.bpmapp.bpmapp";
+
+} else {
+  document.getElementById("text").innerText = "Cihazınızı seçin:";
+  document.getElementById("buttons").style.display = "block";
+}
+</script>
+
+</body>
+</html>
